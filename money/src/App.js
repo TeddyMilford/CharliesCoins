@@ -4,6 +4,7 @@ import CoinsPage from "./CoinsPage";
 import CommoditiesPage from "./CommoditiesPage";
 import NavBar from "./NavBar";
 import StocksPage from "./StocksPage";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
@@ -11,13 +12,13 @@ function App() {
       <NavBar />
       <Switch>
         <Route path="/stocks">
-          <StocksPage />
+          <StocksPage></StocksPage>
         </Route>
         <Route path="/cryptocurrency">
-          <CoinsPage />
+          <CoinsPage></CoinsPage>
         </Route>
         <Route path="/commodities">
-          <CommoditiesPage />
+          <CommoditiesPage></CommoditiesPage>
         </Route>
       </Switch>
     </div>
