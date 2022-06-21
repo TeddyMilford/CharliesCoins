@@ -22,7 +22,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/">
-          <CoinsPage></CoinsPage>
+          <CoinsPage coinData={coins}></CoinsPage>
         </Route>
         <Route path="/discover">
           <CoinsPage coinData={coins}></CoinsPage>

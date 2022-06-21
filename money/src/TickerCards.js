@@ -10,7 +10,7 @@ function TickerCards({ coin, index }) {
     let deter = split.includes("-") ? (color = false) : (color = true);
 
     return (
-      <Card bg={color ? ".up" : ".down"}>
+      <Card bg={color ? "success" : "danger"}>
         <Card.Header>{coin.symbol}</Card.Header>
         <Card.Body>
           <Card.Title>{coin.name} </Card.Title>
