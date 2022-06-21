@@ -17,7 +17,7 @@ function LearnPage() {
   return (
     <Container>
       <Row>
-        <Col className="justify-content-center">
+        <Col className="text-center">
           <h1>Market updates</h1>
           <p>Understand the news and events behind the latest market moves</p>
         </Col>
