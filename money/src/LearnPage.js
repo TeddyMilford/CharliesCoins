@@ -9,7 +9,7 @@ function LearnPage() {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/articles")
+    fetch("http://localhost:3001/articles")
       .then((r) => r.json())
       .then((data) => setArticles(data));
   }, []);
