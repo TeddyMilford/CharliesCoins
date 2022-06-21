@@ -1,18 +1,24 @@
 import React from "react";
 import Nav from "react-bootstrap/Nav";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <Nav className="justify-content-center">
       <Nav.Item>
-        <Nav.Link href="/discover">Discover</Nav.Link>
+        <Link to="/discover" className="nav-link">
+          Discover
+        </Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link href="/watchlist">Watchlist</Nav.Link>
+        <Link to="/watchlist" className="nav-link">
+          Watchlist
+        </Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link href="/learn">Learn</Nav.Link>
+        <Link to="/learn" className="nav-link">
+          Learn
+        </Link>
       </Nav.Item>
     </Nav>
   );
