@@ -2,6 +2,7 @@
 
 import Container from "react-bootstrap/Container";
 import TickerCards from "./TickerCards";
+import Row from "react-bootstrap/Row";
 
 function CardContainer({ coinData }) {
   console.log(coinData);
@@ -9,7 +10,13 @@ function CardContainer({ coinData }) {
     return <TickerCards key={c.id} coin={c} index={i} />;
   });
 
-  return <Container>{deck}</Container>;
+  return (
+    <Container>
+      <Row xs={1} md={2} className="g-4">
+        {deck}
+      </Row>
+    </Container>
+  );
 }
 
 export default CardContainer;
