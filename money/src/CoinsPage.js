@@ -9,9 +9,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-function CoinsPage() {
+function CoinsPage({coinData}) {
   return (
-    console.log("this is the Stocks main page"),
     (
       <Container>
         <Row>
@@ -30,7 +29,7 @@ function CoinsPage() {
         </Row>
         <Row>
           <Col md={8}>
-            <CardContainer />
+            <CardContainer coinData={coinData} />
           </Col>
 
           <Col md={4}>

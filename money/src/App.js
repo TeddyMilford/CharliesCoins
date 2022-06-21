@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import CoinsPage from "./CoinsPage";
 import LearnPage from "./LearnPage";
@@ -7,6 +7,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Watchlist from "./Watchlist";
 
 function App() {
+  const [coins, setCoins] = useState([]);
+  const [watchlist, setWatchlist] = useState([]);
+  useEffect(() => {
+    fetch("https://api.coincap.io/v2/assets")
+      .then((response) => response.json())
+      .then((data) => {
+        setCoins(data.data);
+      });
+  }, []);
+
   return (
     <div>
       <NavBar />
@@ -15,7 +25,7 @@ function App() {
           <CoinsPage></CoinsPage>
         </Route>
         <Route path="/discover">
-          <CoinsPage></CoinsPage>
+          <CoinsPage coinData={coins}></CoinsPage>
         </Route>
         <Route path="/watchlist">
           <Watchlist></Watchlist>
