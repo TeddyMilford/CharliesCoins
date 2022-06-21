@@ -4,7 +4,6 @@ import Card from "react-bootstrap/Card";
 
 function TickerCards({ coin, index }) {
   if (coin !== undefined) {
-    console.log(coin.changePercent24Hr);
     let color;
     let split = coin.changePercent24Hr.split("");
 
