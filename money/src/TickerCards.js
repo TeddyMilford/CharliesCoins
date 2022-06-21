@@ -12,7 +12,9 @@ function TickerCards({ coin, index }) {
 
     return (
       <Col>
-        <Card bg={color ? "success" : "danger"}>
+        <Card
+          style={color ? { background: "#28FF28" } : { background: "#FF2828" }}
+        >
           <Card.Header>{coin.symbol}</Card.Header>
           <Card.Body>
             <Card.Title>{coin.name} </Card.Title>
