@@ -12,10 +12,10 @@ function CardContainer() {
         <Col sm={3}>
           <Nav variant="pills" className="flex-column">
             <Nav.Item>
-              <Nav.Link eventKey="first">META</Nav.Link>
+              <Nav.Link eventKey="first">$BTC</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="second">GOOG</Nav.Link>
+              <Nav.Link eventKey="second">$ETH</Nav.Link>
             </Nav.Item>
           </Nav>
         </Col>
