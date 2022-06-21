@@ -6,13 +6,13 @@ const NavBar = () => {
   return (
     <Nav className="justify-content-center">
       <Nav.Item>
-        <Nav.Link href="/stocks">Stocks</Nav.Link>
+        <Nav.Link href="/discover">Discover</Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link href="/cryptocurrency">Cryptocurrency</Nav.Link>
+        <Nav.Link href="/watchlist">Watchlist</Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link href="/commodities">Commodities</Nav.Link>
+        <Nav.Link href="/learn">Learn</Nav.Link>
       </Nav.Item>
     </Nav>
   );
