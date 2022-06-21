@@ -5,17 +5,19 @@ import Card from "react-bootstrap/Card";
 
 function Articles({ article }) {
   return (
-    <Row xs={4} md={2} className="g-4">
-      <Col>
-        <Card>
-          <Card.Img variant="top" src={article.imageUrl} />
-          <Card.Body>
-            <Card.Title href={article.articleUrl}>{article.title}</Card.Title>
-            <Card.Text>{article.intro}</Card.Text>
-          </Card.Body>
-        </Card>
-      </Col>
-    </Row>
+    <Col>
+      <Card>
+        <Card.Img variant="top" src={article.imageUrl} />
+        <Card.Body>
+          <Card.Title>
+            <Card.Link href={article.articleUrl} target="_blank">
+              {article.title}
+            </Card.Link>
+          </Card.Title>
+          <Card.Text>{article.intro}</Card.Text>
+        </Card.Body>
+      </Card>
+    </Col>
   );
 }
 
