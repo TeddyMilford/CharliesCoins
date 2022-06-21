@@ -11,6 +11,9 @@ function App() {
     <div>
       <NavBar />
       <Switch>
+        <Route exact path="/">
+          <CoinsPage></CoinsPage>
+        </Route>
         <Route path="/discover">
           <CoinsPage></CoinsPage>
         </Route>
