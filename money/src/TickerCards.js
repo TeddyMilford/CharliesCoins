@@ -17,7 +17,6 @@ function TickerCards({ coin, index }) {
 
     let newNumber = Number(coin.changePercent24Hr);
     let fixedDecimal = newNumber.toFixed(3);
-    console.log(fixedDecimal);
 
     let newPrice = Number(coin.priceUsd);
     let priceDecimal = newPrice.toFixed(2);

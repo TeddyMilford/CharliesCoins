@@ -9,7 +9,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-function CoinsPage({ coinData }) {
+function CoinsPage({ coinData, watchData }) {
   return (
     <Container>
       <Row>
@@ -32,7 +32,7 @@ function CoinsPage({ coinData }) {
         </Col>
 
         <Col md={3}>
-          <Watchlist />
+          <Watchlist watchData={watchData} />
         </Col>
       </Row>
     </Container>
