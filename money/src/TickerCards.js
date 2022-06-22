@@ -2,16 +2,16 @@
 import { useState } from "react";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
-import { BsPlusCircleFill, BsPlusCircle } from "react-icons/bs";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { Button } from "react-bootstrap";
 
-function TickerCards({ coin, index }) {
+function TickerCards({ coin, index, onAdd, watchData }) {
   const [tog, setTog] = useState(false);
   if (coin !== undefined) {
     function handleClick() {
       setTog(!tog);
     }
+
     let color;
     let split = coin.changePercent24Hr.split("");
 
@@ -36,12 +36,12 @@ function TickerCards({ coin, index }) {
 
             <Button
               variant="light"
-              onClick={() => {
+              onClick={(e) => {
                 handleClick();
+                onAdd(coin, e);
               }}
             >
-              {/* {tog ? <BsPlusCircleFill /> : <BsPlusCircle />} */}
-              Add
+              {tog ? "Remove" : "Add"}
             </Button>
           </Card.Body>
         </Card>

@@ -22,8 +22,24 @@ function App() {
   }, []);
 
   function addToWatch(coin, e) {
-    console.log(coin);
-    console.log(e.target.value);
+    if (e.target.innerText === "Add") {
+      fetch("http://localhost:3001/watchlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(coin),
+      });
+      setWatchlist([...watchlist, coin]);
+    }
+
+    if (e.target.innerText === "Remove") {
+      fetch("http://localhost:3001/watchlist/" + coin.id, {
+        method: "DELETE",
+      });
+      let updatedWatch = watchlist.filter((c) => {
+        return c.id !== coin.id;
+      });
+      setWatchlist(updatedWatch);
+    }
   }
 
   return (

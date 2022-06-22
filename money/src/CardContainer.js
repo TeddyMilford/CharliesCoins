@@ -4,9 +4,17 @@ import Container from "react-bootstrap/Container";
 import TickerCards from "./TickerCards";
 import Row from "react-bootstrap/Row";
 
-function CardContainer({ coinData }) {
+function CardContainer({ coinData, onAdd, watchData }) {
   const deck = coinData.map((c, i) => {
-    return <TickerCards key={c.id} coin={c} index={i} />;
+    return (
+      <TickerCards
+        key={c.id}
+        coin={c}
+        index={i}
+        onAdd={onAdd}
+        watchData={watchData}
+      />
+    );
   });
 
   return (
