@@ -1,10 +1,17 @@
 //Cards used for the watchlist
-
+import { useState } from "react";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
+import { BsPlusCircleFill, BsPlusCircle } from "react-icons/bs";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import { Button } from "react-bootstrap";
 
 function TickerCards({ coin, index }) {
+  const [tog, setTog] = useState(false);
   if (coin !== undefined) {
+    function handleClick() {
+      setTog(!tog);
+    }
     let color;
     let split = coin.changePercent24Hr.split("");
 
@@ -27,6 +34,15 @@ function TickerCards({ coin, index }) {
             <Card.Title>{coin.name} </Card.Title>
             <Card.Text>${priceDecimal}</Card.Text>
             <Card.Text>Moved {fixedDecimal}% over 24 hours</Card.Text>
+
+            <Button
+              variant="light"
+              onClick={() => {
+                handleClick();
+              }}
+            >
+              {tog ? <BsPlusCircleFill /> : <BsPlusCircle />}
+            </Button>
           </Card.Body>
         </Card>
       </Col>
