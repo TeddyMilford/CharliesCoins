@@ -1,21 +1,18 @@
 // Search by ticker symbol. Use Bootstrap Form Control https://react-bootstrap.github.io/forms/form-control/
 import Form from "react-bootstrap/Form";
-import FormControl from "react-bootstrap/FormControl";
+import Row from "react-bootstrap/Row";
+import Sort from "./Sort";
+import Filter from "./Filter";
+import Search from "./Search";
 
 function SearchBar({ searchTerm, onChangeSearch }) {
-  function handleChange(event) {
-    onChangeSearch(event.target.value);
-  }
-
   return (
     <Form>
-      <FormControl
-        type="text"
-        id="search"
-        placeholder="search name or symbol"
-        defaultValue={searchTerm}
-        onChange={handleChange}
-      />
+      <Row className="mb-1 mt-1">
+        <Search searchTerm={searchTerm} onChangeSearch={onChangeSearch} />
+        <Sort />
+        <Filter />
+      </Row>
     </Form>
   );
 }

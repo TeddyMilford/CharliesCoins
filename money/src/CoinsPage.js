@@ -10,7 +10,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import React, { useState } from "react";
 
-function CoinsPage({ coinData }) {
+function CoinsPage({ coinData, watchData }) {
   const [searchTerm, setSearchTerm] = useState("");
 
   const coinsToDisplay = coinData.filter((coin) => {
@@ -20,7 +20,6 @@ function CoinsPage({ coinData }) {
     );
   });
 
-function CoinsPage({ coinData, watchData }) {
   return (
     <Container>
       <Row>
@@ -30,12 +29,12 @@ function CoinsPage({ coinData, watchData }) {
         <Col>
           <SearchBar searchTerm={searchTerm} onChangeSearch={setSearchTerm} />
         </Col>
-        <Col>
+        {/* <Col>
           <Sort />
         </Col>
         <Col>
           <Filter />
-        </Col>
+        </Col> */}
       </Row>
       <Row>
         <Col md={9}>
