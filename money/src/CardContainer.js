@@ -19,7 +19,7 @@ function CardContainer({ coinData, onAdd, watchData }) {
 
   return (
     <Container>
-      <Row xs={1} md={2} className="g-4">
+      <Row xs={1} md={2} className="g-4 mt-1">
         {deck}
       </Row>
     </Container>
