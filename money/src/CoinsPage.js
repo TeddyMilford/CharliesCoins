@@ -10,11 +10,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import React, { useState } from "react";
 
-
 function CoinsPage({ coinData, watchData, onAdd }) {
-
-
-
   const [searchTerm, setSearchTerm] = useState("");
 
   const coinsToDisplay = coinData.filter((coin) => {
@@ -23,7 +19,6 @@ function CoinsPage({ coinData, watchData, onAdd }) {
       coin.symbol.toLowerCase().includes(searchTerm.toLowerCase())
     );
   });
-
 
   return (
     <Container>
