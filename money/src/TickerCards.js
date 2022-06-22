@@ -1,14 +1,16 @@
 //Cards used for the watchlist
-import { useState } from "react";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { Button } from "react-bootstrap";
-import Watchlist from "./Watchlist";
 
-function TickerCards({ coin, index, onAdd, watchData }) {
+function TickerCards({ coin, onAdd, watchData }) {
   if (coin !== undefined) {
-    let tog = watchData.includes(coin);
+    // let tog = watchData.includes(coin);
+
+    const tog = watchData.find((c) => {
+      return c.id === coin.id;
+    });
 
     let color;
     let split = coin.changePercent24Hr.split("");
@@ -23,22 +25,34 @@ function TickerCards({ coin, index, onAdd, watchData }) {
 
     return (
       <Col>
-        <Card
-          style={color ? { background: "#28FF28" } : { background: "#FF2828" }}
-        >
-          <Card.Header>{coin.symbol}</Card.Header>
+        <Card>
+          <Card.Header
+            style={
+              color ? { background: "#28FF28" } : { background: "#FF2828" }
+            }
+          >
+            {coin.symbol}
+          </Card.Header>
           <Card.Body>
             <Card.Title>{coin.name} </Card.Title>
             <Card.Text>${priceDecimal}</Card.Text>
             <Card.Text>Moved {fixedDecimal}% over 24 hours</Card.Text>
 
             <Button
-              variant="light"
+              variant="dark"
               onClick={(e) => {
                 onAdd(coin, e);
               }}
             >
               {tog ? "Remove" : "Add"}
+            </Button>
+            <Button
+              style={{ margin: "3px" }}
+              variant="dark"
+              href={coin.explorer}
+              target="_blank"
+            >
+              Explore
             </Button>
           </Card.Body>
         </Card>
@@ -50,5 +64,3 @@ function TickerCards({ coin, index, onAdd, watchData }) {
 }
 
 export default TickerCards;
-
-// bg={color ? "danger" : "success"}
