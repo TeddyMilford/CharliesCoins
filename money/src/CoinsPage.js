@@ -8,6 +8,17 @@ import Watchlist from "./Watchlist";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import React, { useState } from "react";
+
+function CoinsPage({ coinData }) {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const coinsToDisplay = coinData.filter((coin) => {
+    return (
+      coin.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      coin.symbol.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  });
 
 function CoinsPage({ coinData, watchData }) {
   return (
@@ -17,7 +28,7 @@ function CoinsPage({ coinData, watchData }) {
       </Row>
       <Row xs="auto">
         <Col>
-          <SearchBar />
+          <SearchBar searchTerm={searchTerm} onChangeSearch={setSearchTerm} />
         </Col>
         <Col>
           <Sort />
@@ -28,7 +39,7 @@ function CoinsPage({ coinData, watchData }) {
       </Row>
       <Row>
         <Col md={9}>
-          <CardContainer coinData={coinData} />
+          <CardContainer coinData={coinsToDisplay} />
         </Col>
 
         <Col md={3}>
