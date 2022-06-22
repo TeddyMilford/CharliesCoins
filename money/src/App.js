@@ -9,6 +9,7 @@ import Watchlist from "./Watchlist";
 function App() {
   const [coins, setCoins] = useState([]);
   const [watchlist, setWatchlist] = useState([]);
+
   useEffect(() => {
     fetch("https://api.coincap.io/v2/assets")
       .then((response) => response.json())
