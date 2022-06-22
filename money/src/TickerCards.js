@@ -4,13 +4,11 @@ import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { Button } from "react-bootstrap";
+import Watchlist from "./Watchlist";
 
 function TickerCards({ coin, index, onAdd, watchData }) {
-  const [tog, setTog] = useState(false);
   if (coin !== undefined) {
-    function handleClick() {
-      setTog(!tog);
-    }
+    let tog = watchData.includes(coin);
 
     let color;
     let split = coin.changePercent24Hr.split("");
@@ -37,7 +35,6 @@ function TickerCards({ coin, index, onAdd, watchData }) {
             <Button
               variant="light"
               onClick={(e) => {
-                handleClick();
                 onAdd(coin, e);
               }}
             >
