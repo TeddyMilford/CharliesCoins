@@ -49,5 +49,49 @@
       "intro": "A guide to the multi-chain future, sidechains, and layer-2 solutions",
       "articleUrl": "https://www.coinbase.com/learn/market-updates/around-the-block-issue-20"
     }
+  ],
+  "watchlist": [
+    {
+      "id": "bitcoin",
+      "rank": "1",
+      "symbol": "BTC",
+      "name": "Bitcoin",
+      "supply": "19073443.0000000000000000",
+      "maxSupply": "21000000.0000000000000000",
+      "marketCapUsd": "399889944982.7224775075032901",
+      "volumeUsd24Hr": "11437912999.6489283551313519",
+      "priceUsd": "20965.7975742881071607",
+      "changePercent24Hr": "4.2379307069796371",
+      "vwap24Hr": "21172.0540420264712843",
+      "explorer": "https://blockchain.info/"
+    },
+    {
+      "id": "ethereum",
+      "rank": "2",
+      "symbol": "ETH",
+      "name": "Ethereum",
+      "supply": "121256279.1865000000000000",
+      "maxSupply": null,
+      "marketCapUsd": "137062467023.0303576792643145",
+      "volumeUsd24Hr": "7883166264.4119799795742991",
+      "priceUsd": "1130.3535614202660670",
+      "changePercent24Hr": "2.1677020696770370",
+      "vwap24Hr": "1144.9973750865590082",
+      "explorer": "https://etherscan.io/"
+    },
+    {
+      "id": "tether",
+      "rank": "3",
+      "symbol": "USDT",
+      "name": "Tether",
+      "supply": "67495084613.2946300000000000",
+      "maxSupply": null,
+      "marketCapUsd": "67531381282.4858790807557126",
+      "volumeUsd24Hr": "22161823240.7255131300418659",
+      "priceUsd": "1.0005377675929915",
+      "changePercent24Hr": "0.1847111575683879",
+      "vwap24Hr": "0.9990253074677281",
+      "explorer": "https://www.omniexplorer.info/asset/31"
+    }
   ]
 }

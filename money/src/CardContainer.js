@@ -5,7 +5,6 @@ import TickerCards from "./TickerCards";
 import Row from "react-bootstrap/Row";
 
 function CardContainer({ coinData }) {
-  console.log(coinData);
   const deck = coinData.map((c, i) => {
     return <TickerCards key={c.id} coin={c} index={i} />;
   });

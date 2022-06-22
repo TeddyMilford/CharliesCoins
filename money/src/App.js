@@ -16,6 +16,9 @@ function App() {
       .then((data) => {
         setCoins(data.data);
       });
+    fetch("http://localhost:3001/watchlist")
+      .then((response) => response.json())
+      .then((data) => setWatchlist(data));
   }, []);
 
   return (
@@ -23,13 +26,13 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/">
-          <CoinsPage coinData={coins}></CoinsPage>
+          <CoinsPage coinData={coins} watchData={watchlist}></CoinsPage>
         </Route>
         <Route path="/discover">
-          <CoinsPage coinData={coins}></CoinsPage>
+          <CoinsPage coinData={coins} watchData={watchlist}></CoinsPage>
         </Route>
         <Route path="/watchlist">
-          <Watchlist></Watchlist>
+          <Watchlist watchData={watchlist}></Watchlist>
         </Route>
         <Route path="/learn">
           <LearnPage></LearnPage>
