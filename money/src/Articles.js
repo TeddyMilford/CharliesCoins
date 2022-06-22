@@ -6,7 +6,7 @@ import Card from "react-bootstrap/Card";
 function Articles({ article }) {
   return (
     <Col>
-      <Card>
+      <Card href={article.articleUrl} target="_blank">
         <Card.Img variant="top" src={article.imageUrl} />
         <Card.Body>
           <Card.Title>

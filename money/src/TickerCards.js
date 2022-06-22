@@ -40,7 +40,8 @@ function TickerCards({ coin, index }) {
                 handleClick();
               }}
             >
-              {tog ? <BsPlusCircleFill /> : <BsPlusCircle />}
+              {/* {tog ? <BsPlusCircleFill /> : <BsPlusCircle />} */}
+              Add
             </Button>
           </Card.Body>
         </Card>

@@ -20,18 +20,31 @@ function App() {
       .then((data) => setWatchlist(data));
   }, []);
 
+  function addToWatch(coin, e) {
+    console.log(coin);
+    console.log(e.target.value);
+  }
+
   return (
     <div>
       <NavBar />
       <Switch>
         <Route exact path="/">
-          <CoinsPage coinData={coins} watchData={watchlist}></CoinsPage>
+          <CoinsPage
+            coinData={coins}
+            watchData={watchlist}
+            onAdd={addToWatch}
+          ></CoinsPage>
         </Route>
         <Route path="/discover">
-          <CoinsPage coinData={coins} watchData={watchlist}></CoinsPage>
+          <CoinsPage
+            coinData={coins}
+            watchData={watchlist}
+            onAdd={addToWatch}
+          ></CoinsPage>
         </Route>
         <Route path="/watchlist">
-          <Watchlist watchData={watchlist}></Watchlist>
+          <Watchlist watchData={watchlist} onAdd={addToWatch}></Watchlist>
         </Route>
         <Route path="/learn">
           <LearnPage></LearnPage>
