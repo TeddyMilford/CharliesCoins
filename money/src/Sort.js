@@ -3,13 +3,24 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Col } from "react-bootstrap";
 
-function Sort() {
+function Sort({ sortBy, onChangeSortBy }) {
+  const handleSelect = (e) => {
+    e.preventDefault();
+    if (e.target.name !== "") {
+      onChangeSortBy(e.target.name);
+    }
+  };
+
   return (
     <Col>
-      <DropdownButton id="dropdown-basic-button" title="Sort by...">
-        <Dropdown.Item href="#/action-1">Market Cap (highest)</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">Price (highest)</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Price (lowest)</Dropdown.Item>
+      <DropdownButton
+        id="dropdown-basic-button"
+        title={sortBy}
+        onClick={handleSelect}
+      >
+        <Dropdown.Item name="marketCap">Market Cap (highest)</Dropdown.Item>
+        <Dropdown.Item name="highestPrice">Price (highest)</Dropdown.Item>
+        <Dropdown.Item name="lowestPrice">Price (lowest)</Dropdown.Item>
       </DropdownButton>
     </Col>
   );

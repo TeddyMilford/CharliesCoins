@@ -1,3 +1,4 @@
+import { Col } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import TickerCards from "./TickerCards";
@@ -6,15 +7,15 @@ import TickerCards from "./TickerCards";
 function Watchlist({ watchData, onAdd }) {
   let deck = watchData.map((c) => {
     return (
-      <TickerCards key={c.id} coin={c} onAdd={onAdd} watchData={watchData} />
+      <Row>
+        <TickerCards key={c.id} coin={c} onAdd={onAdd} watchData={watchData} />
+      </Row>
     );
   });
   return (
     <Container>
       <h1>Watchlist</h1>
-      <Row xs={1} md={2} className="g-4">
-        {deck}
-      </Row>
+      {deck}
     </Container>
   );
 }

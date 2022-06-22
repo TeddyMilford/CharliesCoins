@@ -24,6 +24,7 @@ function TickerCards({ coin, index, onAdd, watchData }) {
     return (
       <Col>
         <Card
+          className="m-1"
           style={color ? { background: "#28FF28" } : { background: "#FF2828" }}
         >
           <Card.Header>{coin.symbol}</Card.Header>
