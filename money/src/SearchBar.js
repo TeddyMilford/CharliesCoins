@@ -2,7 +2,6 @@
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Sort from "./Sort";
-import Filter from "./Filter";
 import Search from "./Search";
 
 function SearchBar({ searchTerm, onChangeSearch }) {
@@ -11,7 +10,6 @@ function SearchBar({ searchTerm, onChangeSearch }) {
       <Row className="mb-1 mt-1">
         <Search searchTerm={searchTerm} onChangeSearch={onChangeSearch} />
         <Sort />
-        <Filter />
       </Row>
     </Form>
   );

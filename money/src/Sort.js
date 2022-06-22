@@ -7,9 +7,9 @@ function Sort() {
   return (
     <Col>
       <DropdownButton id="dropdown-basic-button" title="Sort by...">
-        <Dropdown.Item href="#/action-1">Price (lowest)</Dropdown.Item>
+        <Dropdown.Item href="#/action-1">Market Cap (highest)</Dropdown.Item>
         <Dropdown.Item href="#/action-2">Price (highest)</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Daily gain % </Dropdown.Item>
+        <Dropdown.Item href="#/action-3">Price (lowest)</Dropdown.Item>
       </DropdownButton>
     </Col>
   );
