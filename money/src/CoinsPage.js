@@ -10,7 +10,7 @@ import React, { useState } from "react";
 
 function CoinsPage({ coinData, watchData, onAdd }) {
   const [searchTerm, setSearchTerm] = useState("");
-  const [sortBy, setSortBy] = useState("marketCap");
+  const [sortBy, setSortBy] = useState("Market Cap");
 
   const filteredCoins = coinData.filter((coin) => {
     return (
@@ -20,9 +20,9 @@ function CoinsPage({ coinData, watchData, onAdd }) {
   });
 
   const sortedCoins = filteredCoins.sort((coin1, coin2) => {
-    if (sortBy === "marketCap") {
+    if (sortBy === "Market Cap") {
       console.log("default sort is by market cap");
-    } else if (sortBy === "highestPrice") {
+    } else if (sortBy === "Highest Price") {
       return coin2.priceUsd - coin1.priceUsd;
     } else {
       return coin1.priceUsd - coin2.priceUsd;

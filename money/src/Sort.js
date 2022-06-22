@@ -4,6 +4,8 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { Col } from "react-bootstrap";
 
 function Sort({ sortBy, onChangeSortBy }) {
+  let buttonTitle = "Market Cap";
+
   const handleSelect = (e) => {
     e.preventDefault();
     if (e.target.name !== "") {
@@ -18,9 +20,9 @@ function Sort({ sortBy, onChangeSortBy }) {
         title={sortBy}
         onClick={handleSelect}
       >
-        <Dropdown.Item name="marketCap">Market Cap (highest)</Dropdown.Item>
-        <Dropdown.Item name="highestPrice">Price (highest)</Dropdown.Item>
-        <Dropdown.Item name="lowestPrice">Price (lowest)</Dropdown.Item>
+        <Dropdown.Item name="Market Cap">Market Cap (highest)</Dropdown.Item>
+        <Dropdown.Item name="Highest Price">Price (highest)</Dropdown.Item>
+        <Dropdown.Item name="Lowest Price">Price (lowest)</Dropdown.Item>
       </DropdownButton>
     </Col>
   );
