@@ -40,7 +40,7 @@ function TickerCards({ coin, onAdd, watchData }) {
             <Card.Text>Moved {fixedDecimal}% over 24 hours</Card.Text>
 
             <Button
-              variant="dark"
+              variant="secondary"
               onClick={(e) => {
                 onAdd(coin, e);
               }}
@@ -49,7 +49,7 @@ function TickerCards({ coin, onAdd, watchData }) {
             </Button>
             <Button
               style={{ margin: "3px" }}
-              variant="dark"
+              variant="secondary"
               href={coin.explorer}
               target="_blank"
             >
