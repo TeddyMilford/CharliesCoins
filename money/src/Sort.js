@@ -17,6 +17,7 @@ function Sort({ sortBy, onChangeSortBy }) {
     <Col>
       <DropdownButton
         id="dropdown-basic-button"
+        variant="secondary"
         title={sortBy}
         onClick={handleSelect}
       >
