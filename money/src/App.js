@@ -23,7 +23,7 @@ function App() {
 
   function addToWatch(coin, e) {
     if (e.target.innerText === "Add") {
-      fetch("http://localhost:3001/watchlist", {
+      fetch("https://tandn.herokuapp.com/watchlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(coin),
@@ -32,7 +32,7 @@ function App() {
     }
 
     if (e.target.innerText === "Remove") {
-      fetch("http://localhost:3001/watchlist/" + coin.id, {
+      fetch("https://tandn.herokuapp.com/watchlist/" + coin.id, {
         method: "DELETE",
       });
       let updatedWatch = watchlist.filter((c) => {
